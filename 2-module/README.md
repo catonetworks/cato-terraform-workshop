@@ -33,10 +33,41 @@ The module declares no provider — it inherits `cato` from the root.
 
 ---
 
+## Authentication — choose one
+
+This folder's `provider "cato"` block is inline in `main.tf`. The two styles below are
+mutually exclusive — pick one.
+
+**Option A — Terraform environment-variable (token) auth:** replace the provider block in
+`main.tf` with:
+```hcl
+provider "cato" {
+  baseurl    = "https://api.catonetworks.com/api/v1/graphql2"
+  token      = var.cato_token
+  account_id = var.account_id
+}
+```
+```bash
+export TF_VAR_cato_token="R=...|K=..."
+export TF_VAR_account_id="<your-dev-account-id>"
+```
+(or copy `terraform.tfvars.example` → `terraform.tfvars`, which is gitignored.)
+
+**Option B — Cato CLI profile auth:**
+```hcl
+provider "cato" {
+  profile = "your-cli-profile-name"
+}
+```
+(creds resolved from `~/.cato/credentials`; requires catocli configured — see the root
+README's 3.3.0 prerequisite.) The committed `main.tf` ships a **sample** profile
+(`profile = "badev4"`) — change it to your own dev profile before running.
+
+---
+
 ## Run it
 
-Authenticate the same way as Exercise 1 (set your dev `profile` in the `provider
-"cato"` block in `main.tf`, or use the token block), then:
+With auth set up (above), run:
 
 ```bash
 terraform init          # also initializes the local module

@@ -16,9 +16,40 @@ single-resource import, generalized to a whole policy.
   bulk IFW module).
 - `catocli` installed.
 - A dev tenant that **already has** an Internet Firewall policy you want to adopt.
+- Auth configured (see **Authentication — choose one** below).
 - Provider `catonetworks/cato` **`= 2.0.0-prerelease.1`** + module
   `catonetworks/bulk-if-rules/cato` **`= 0.0.9`**, both installed from the public
   Terraform Registry (no filesystem mirror).
+
+---
+
+## Authentication — choose one
+
+Unlike the other exercises, this folder's `main.tf` ships **without** a `provider "cato"`
+block — add **one** of the two blocks below to `main.tf` (they're mutually exclusive).
+
+**Option A — Terraform environment-variable (token) auth:** add to `main.tf`:
+```hcl
+provider "cato" {
+  baseurl    = "https://api.catonetworks.com/api/v1/graphql2"
+  token      = var.cato_token
+  account_id = var.account_id
+}
+```
+```bash
+export TF_VAR_cato_token="R=...|K=..."
+export TF_VAR_account_id="<your-dev-account-id>"
+```
+(or copy `terraform.tfvars.example` → `terraform.tfvars`, which is gitignored.)
+
+**Option B — Cato CLI profile auth:** add to `main.tf`:
+```hcl
+provider "cato" {
+  profile = "your-cli-profile-name"
+}
+```
+(creds resolved from `~/.cato/credentials`; requires catocli configured — see the root
+README's 3.3.0 prerequisite.)
 
 ---
 

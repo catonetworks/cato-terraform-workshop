@@ -14,24 +14,35 @@ Do them in order: Exercise 2 adopts the site you create in Exercise 1.
 
 ---
 
-## Authenticate (pick one)
+## Authentication — choose one
 
-The `provider "cato"` block is inline at the top of `main.tf`. It ships with a sample
-profile — **change it to your own dev profile**, or switch to the token block.
+This folder's `provider "cato"` block is inline at the top of `main.tf`. The two styles
+below are mutually exclusive — pick one.
 
-**Profile (recommended):** edit `main.tf`
+**Option A — Terraform environment-variable (token) auth:** replace the provider block in
+`main.tf` with:
 ```hcl
 provider "cato" {
-  profile = "my-dev-profile"   # a dev profile from ~/.cato/credentials
+  baseurl    = "https://api.catonetworks.com/api/v1/graphql2"
+  token      = var.cato_token
+  account_id = var.account_id
 }
 ```
-
-**Explicit token:** uncomment the token block in `main.tf`, then
 ```bash
-export TF_VAR_cato_token="R=<region>|K=<key>"
+export TF_VAR_cato_token="R=...|K=..."
 export TF_VAR_account_id="<your-dev-account-id>"
 ```
-(or copy `terraform.tfvars.example` → `terraform.tfvars` and fill it in).
+(or copy `terraform.tfvars.example` → `terraform.tfvars`, which is gitignored.)
+
+**Option B — Cato CLI profile auth:**
+```hcl
+provider "cato" {
+  profile = "your-cli-profile-name"
+}
+```
+(creds resolved from `~/.cato/credentials`; requires catocli configured — see the root
+README's 3.3.0 prerequisite.) The committed `main.tf` ships a **sample** profile
+(`profile = "badev4"`) — change it to your own dev profile before running.
 
 > Uses `catonetworks/cato` **`= 2.0.0-prerelease.1`**, installed from the public
 > Terraform Registry (no filesystem mirror). `terraform init` pulls it.

@@ -3,13 +3,8 @@
 ############################################################################
 
 module "if_rules" {
-  # Published registry module -- installed from the Terraform Registry (no mirror).
-  # 0.0.9 requires the cato provider >= 2.0.0-prerelease.1 (matches versions.tf).
   source  = "catonetworks/bulk-if-rules/cato"
-  version = "= 0.0.9"
-
-  # Dev override (local clone) -- uncomment to develop against a local module:
-  # source = "../../../../catonetworks/terraform-cato-bulk-if-rules"
+  version = "~= 0.0.9"
 
   # Path to the policy exported with:
   #   catocli export if_rules --json-filename all_ifw_rules_and_sections.json

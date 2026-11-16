@@ -28,11 +28,42 @@ runs without a live export. Replace it with a real one when you're ready.
 
 ## Prerequisites
 
-- Terraform ≥ 1.5; auth configured (the `provider "cato"` block is inline in
-  `main.tf` — set your dev `profile`, or use the token block).
+- Terraform ≥ 1.5; auth configured (see **Authentication — choose one** below).
 - `catocli` installed, to produce a real export (optional — a sample ships here).
 - Provider `catonetworks/cato` **`= 2.0.0-prerelease.1`**, installed from the public
   Terraform Registry (no filesystem mirror). Pulled by `terraform init`.
+
+---
+
+## Authentication — choose one
+
+This folder's `provider "cato"` block is inline in `main.tf`. The two styles below are
+mutually exclusive — pick one.
+
+**Option A — Terraform environment-variable (token) auth:** replace the provider block in
+`main.tf` with:
+```hcl
+provider "cato" {
+  baseurl    = "https://api.catonetworks.com/api/v1/graphql2"
+  token      = var.cato_token
+  account_id = var.account_id
+}
+```
+```bash
+export TF_VAR_cato_token="R=...|K=..."
+export TF_VAR_account_id="<your-dev-account-id>"
+```
+(or copy `terraform.tfvars.example` → `terraform.tfvars`, which is gitignored.)
+
+**Option B — Cato CLI profile auth:**
+```hcl
+provider "cato" {
+  profile = "your-cli-profile-name"
+}
+```
+(creds resolved from `~/.cato/credentials`; requires catocli configured — see the root
+README's 3.3.0 prerequisite.) The committed `main.tf` ships a **sample** profile
+(`profile = "badev2"`) — change it to your own dev profile before running.
 
 ---
 

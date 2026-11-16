@@ -19,9 +19,6 @@ Exercises 1 and 2 share the `1-resource/` folder (Ex 2 re-adopts the site you bu
 Ex 1). Exercises 3 and 4 use the *same* Internet-Firewall bulk module — first
 greenfield, then brownfield.
 
-> **Optional extra:** [`2-module/`](./2-module/README.md) — Modules & CSV, a companion
-> to Exercise 1 (not one of the four core exercises).
-
 ### The learning arc
 **Create** one object (Ex 1) → **adopt** one existing object (Ex 2) → **deploy** many
 objects at once (Ex 3) → **adopt** many live objects at once (Ex 4). Each step
@@ -61,19 +58,39 @@ export TF_CLI_CONFIG_FILE=/path/to/registry-only.tfrc
 ```
 
 **3. catocli** (Exercises 3 & 4 only) — the Cato CLI, configured with a dev profile,
-used to export live policy JSON.
+used to export live policy JSON. Install **version 3.3.0**:
 
-**4. Authentication** — each folder's `provider "cato"` block is **inline in its
-`main.tf`** and supports two mutually-exclusive styles:
+```bash
+pip install catocli==3.3.0
+```
 
-| Style | How | When |
-|---|---|---|
-| **catocli profile** (recommended) | Set `profile = "<your-dev-profile>"` in the `provider "cato"` block | Creds live in `~/.cato/credentials` |
-| **Explicit token** | Uncomment the token block; `export TF_VAR_cato_token="R=..\|K=.."` + `export TF_VAR_account_id="<dev-id>"` | CI, or no catocli profile |
+**4. Authentication — choose one.** Each folder's `provider "cato"` block is **inline in
+its `main.tf`**. The two styles below are mutually exclusive — pick one. The committed
+`main.tf` files ship a **sample** profile (`badev4` in `1-resource`/`2-module`, `badev2`
+in `3-bulk-rules`) you must change to your own.
 
-The committed `main.tf` files ship a **sample** profile (`badev4` / `badev2`) — change
-it to your own dev profile before running. (For token auth you can instead copy
-`terraform.tfvars.example` → `terraform.tfvars`, which is gitignored.)
+**Option A — Terraform environment-variable (token) auth:**
+```hcl
+provider "cato" {
+  baseurl    = "https://api.catonetworks.com/api/v1/graphql2"
+  token      = var.cato_token
+  account_id = var.account_id
+}
+```
+```bash
+export TF_VAR_cato_token="R=...|K=..."
+export TF_VAR_account_id="<your-dev-account-id>"
+```
+(or copy `terraform.tfvars.example` → `terraform.tfvars`, which is gitignored.)
+
+**Option B — Cato CLI profile auth:**
+```hcl
+provider "cato" {
+  profile = "your-cli-profile-name"
+}
+```
+(creds resolved from `~/.cato/credentials`; requires catocli configured — see the
+3.3.0 prerequisite above.)
 
 **Verify:**
 ```bash

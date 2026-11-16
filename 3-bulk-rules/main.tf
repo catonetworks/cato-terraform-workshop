@@ -18,18 +18,12 @@ provider "cato" {
 # }
 
 module "if_rules" {
-  # Published registry module -- installed from the Terraform Registry (no mirror).
-  # 0.0.9 requires the cato provider >= 2.0.0-prerelease.1 (matches versions.tf).
   source  = "catonetworks/bulk-if-rules/cato"
-  version = "= 0.0.9"
-
-  # Dev override (local clone) -- uncomment to develop against a local module:
-  # source = "../../../../catonetworks/terraform-cato-bulk-if-rules"
+  version = "~= 0.0.9"
 
   # Path to the policy exported with:
   #   catocli export if_rules --json-filename all_ifw_rules_and_sections.json
   ifw_rules_json_file_path = "${path.module}/config_data/all_ifw_rules_and_sections.json"
-  # Empty policies are handled automatically (dynamic guard) -- no allow_empty_policy flag.
 }
 
 output "deployment_summary" {
