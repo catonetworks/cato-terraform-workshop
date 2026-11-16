@@ -3,7 +3,7 @@
 #   2. explicit creds    -> set var.cato_token + var.account_id (or export CATO_TOKEN)
 
 provider "cato" {
-  profile = "badev4"
+  profile = "your-cli-profile-name"
 }
 
 # # Auth Option 2 - api_token

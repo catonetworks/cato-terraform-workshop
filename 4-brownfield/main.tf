@@ -2,6 +2,21 @@
 # Exercise 4 -- Brownfield Deployment Internet Firewall with migration/import
 ############################################################################
 
+# One provider block that supports BOTH authentication styles:
+#   1. catocli profile  -> set var.cato_profile (or `export CATO_PROFILE=<name>`)
+#   2. explicit creds    -> set var.cato_token + var.account_id (or export CATO_TOKEN)
+
+provider "cato" {
+  profile = "your-cli-profile-name"
+}
+
+# # Auth Option 2 - api_token
+# provider "cato" {
+#   baseurl    = var.cato_baseurl
+#   token      = var.cato_token
+#   account_id = var.account_id
+# }
+
 module "if_rules" {
   source  = "catonetworks/bulk-if-rules/cato"
   version = "~= 0.0.9"
