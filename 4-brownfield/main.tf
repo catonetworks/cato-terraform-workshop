@@ -24,7 +24,6 @@ module "if_rules" {
   # Path to the policy exported with:
   #   catocli export if_rules --json-filename all_ifw_rules_and_sections.json
   ifw_rules_json_file_path = "${path.module}/config_data/all_ifw_rules_and_sections.json"
-  # Empty policies are handled automatically (dynamic guard) -- no allow_empty_policy flag.
 }
 
 output "deployment_summary" {
