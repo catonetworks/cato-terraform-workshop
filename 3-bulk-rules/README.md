@@ -4,10 +4,6 @@
 from a single JSON file, using a **published registry module** instead of writing one
 resource per rule. This is how real policies are managed at scale.
 
-> ⚠️ Dev sub-account only — never account 15412. Applying this writes a firewall
-> policy to the target tenant. See the root [README](../README.md) for prerequisites
-> and auth.
-
 ---
 
 ## The idea

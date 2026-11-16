@@ -5,9 +5,6 @@ live**, then adopt every rule and section into state with native `import` blocks
 Terraform manages the existing policy **without recreating it**. This is Exercise 2's
 single-resource import, generalized to a whole policy.
 
-> ⚠️ Dev sub-account only — never account 15412. See the root [README](../README.md)
-> for prerequisites and auth.
-
 ---
 
 ## Prerequisites

@@ -9,9 +9,6 @@ This folder holds the first two exercises. They share one `main.tf`:
 
 Do them in order: Exercise 2 adopts the site you create in Exercise 1.
 
-> ⚠️ Run this against a **dev sub-account only** — never the production tenant
-> (account 15412). See the root [README](../README.md) for prerequisites and auth.
-
 ---
 
 ## Authentication — choose one

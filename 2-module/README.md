@@ -7,10 +7,6 @@
 drive it from a **CSV file** instead of inline HCL. This is the pattern that scales:
 *config* (the module, written once) stays separate from *data* (the CSV, edited often).
 
-> ⚠️ Dev sub-account only — never account 15412. See the root [README](../README.md)
-> for prerequisites and auth. Uses provider `catonetworks/cato`
-> **`= 2.0.0-prerelease.1`** from the public Terraform Registry (no mirror).
-
 ---
 
 ## What's here
