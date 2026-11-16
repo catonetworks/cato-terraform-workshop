@@ -11,7 +11,7 @@ prerequisites once, then open the folder README for each exercise.
 | # | Exercise | Folder | One-line goal |
 |---|---|---|---|
 | **1** | Create resources with Terraform | [`1-resource/`](./1-resource/README.md) | Create a socket site + static hosts; meet `for_each`. |
-| **2** | Import one existing resource | [`1-resource/`](./1-resource/README.md#exercise-2--import-one-existing-resource) | Adopt the live site into a fresh state with `terraform import` — no destroy/recreate. |
+| **2** | Import one existing resource | [`2-module/`](./2-module/README.md#exercise-2--import-one-existing-resource) | Adopt the live site into a fresh state with `terraform import` — no destroy/recreate. |
 | **3** | Bulk policy from a `catocli` export | [`3-bulk-rules/`](./3-bulk-rules/README.md) | Deploy a whole Internet Firewall policy from one JSON export via a registry module. |
 | **4** | Brownfield adoption at scale | [`4-brownfield/`](./4-brownfield/README.md) | Adopt an entire **live** policy into state with native `import` blocks (one-shot `migration.tf`). |
 
