@@ -1,0 +1,13 @@
+# Copy to terraform.tfvars (gitignored) and fill in ONE auth style.
+
+# ---- Style 1 (recommended): catocli profile --------------------------------
+#     export CATO_PROFILE=my-dev-profile
+# ...or set it explicitly here:
+# cato_profile = "my-dev-profile"
+
+# ---- Style 2: explicit token + account id ----------------------------------
+# cato_token = "R=<region>|K=<your-api-key>"
+# account_id = "<your-dev-account-id>"
+
+# ---- Optional ---------------------------------------------------------------
+# cato_baseurl = "https://api.catonetworks.com/api/v1/graphql2"

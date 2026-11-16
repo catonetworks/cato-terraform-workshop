@@ -1,0 +1,48 @@
+############################################################################
+# Exercise 3 -- Bulk Internet Firewall rules from a catocli JSON export
+############################################################################
+
+# One provider block that supports BOTH authentication styles:
+#   1. catocli profile  -> set var.cato_profile (or `export CATO_PROFILE=<name>`)
+#   2. explicit creds    -> set var.cato_token + var.account_id (or export CATO_TOKEN)
+
+provider "cato" {
+  profile = "badev2"
+}
+
+# # Auth Option 2 - api_token
+# provider "cato" {
+#   baseurl    = var.cato_baseurl
+#   token      = var.cato_token
+#   account_id = var.account_id
+# }
+
+module "if_rules" {
+  # Published registry module -- installed from the Terraform Registry (no mirror).
+  # 0.0.9 requires the cato provider >= 2.0.0-prerelease.1 (matches versions.tf).
+  source  = "catonetworks/bulk-if-rules/cato"
+  version = "= 0.0.9"
+
+  # Dev override (local clone) -- uncomment to develop against a local module:
+  # source = "../../../../catonetworks/terraform-cato-bulk-if-rules"
+
+  # Path to the policy exported with:
+  #   catocli export if_rules --json-filename all_ifw_rules_and_sections.json
+  ifw_rules_json_file_path = "${path.module}/config_data/all_ifw_rules_and_sections.json"
+  # Empty policies are handled automatically (dynamic guard) -- no allow_empty_policy flag.
+}
+
+output "deployment_summary" {
+  description = "Counts (rules, sections, enabled/disabled, etc.) for the deployment."
+  value       = module.if_rules.deployment_summary
+}
+
+output "rule_ids" {
+  description = "Map of rule name -> id."
+  value       = module.if_rules.rule_ids
+}
+
+output "section_ids" {
+  description = "Map of section name -> id."
+  value       = module.if_rules.section_ids
+}

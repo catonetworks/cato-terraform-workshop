@@ -42,3 +42,22 @@ terraform.rc
 # Optional: ignore plan files saved before destroying Terraform configuration
 # Uncomment the line below if you want to ignore planout files.
 # planout
+
+# Workshop plan files and example variable files
+**/*.tfplan
+!**/*.tfvars.example
+# Keep provider dependency lock files in version control
+!**/.terraform.lock.hcl
+
+# Python
+**/__pycache__/
+*.py[cod]
+
+# Logs (deploy/destroy detached run logs)
+*.log
+
+# Script-output dumps (WF rule/section exports — not source)
+**/config_data/*
+
+# OS / editor cruft
+.DS_Store
