@@ -587,7 +587,7 @@
                                     "ip": [],
                                     "host": [],
                                     "site": [],
-                                    "subnet": [],
+                                    "subnet":"1.2.3.0/24",
                                     "ipRange": [],
                                     "globalIpRange": [],
                                     "networkInterface": [],
@@ -595,11 +595,7 @@
                                     "floatingSubnet": [],
                                     "user": [],
                                     "usersGroup": [],
-                                    "group": [
-                                        {
-                                            "name": "my group name"
-                                        }
-                                    ],
+                                    "group": [],
                                     "systemGroup": []
                                 },
                                 "connectionOrigin": "ANY",
@@ -719,7 +715,7 @@
                                     "ip": [],
                                     "host": [],
                                     "site": [],
-                                    "subnet": [],
+                                    "subnet":"1.2.3.0/24",
                                     "ipRange": [],
                                     "globalIpRange": [],
                                     "networkInterface": [],
@@ -727,11 +723,7 @@
                                     "floatingSubnet": [],
                                     "user": [],
                                     "usersGroup": [],
-                                    "group": [
-                                        {
-                                            "name": "my group name"
-                                        }
-                                    ],
+                                    "group": [],
                                     "systemGroup": []
                                 },
                                 "connectionOrigin": "ANY",
