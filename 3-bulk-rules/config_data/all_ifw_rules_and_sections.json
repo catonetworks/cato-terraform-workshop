@@ -584,10 +584,10 @@
                             "scope_enabled": true,
                             "scope": {
                                 "source": {
-                                    "ip": [],
+                                    "ip": ["1.2.3.4"],
                                     "host": [],
                                     "site": [],
-                                    "subnet":"1.2.3.0/24",
+                                    "subnet": [],
                                     "ipRange": [],
                                     "globalIpRange": [],
                                     "networkInterface": [],
@@ -712,10 +712,10 @@
                             "scope_enabled": true,
                             "scope": {
                                 "source": {
-                                    "ip": [],
+                                    "ip": ["1.2.3.4"],
                                     "host": [],
                                     "site": [],
-                                    "subnet":"1.2.3.0/24",
+                                    "subnet": [],
                                     "ipRange": [],
                                     "globalIpRange": [],
                                     "networkInterface": [],
