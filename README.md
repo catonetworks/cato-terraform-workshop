@@ -116,13 +116,60 @@ terraform destroy    # remove everything this config created
 Full per-step commands, expected output, and "why" live in each exercise's folder
 README — start with [Exercise 1](./1-resource/README.md).
 
+## Pro tip
+
+Set up short aliases so the repeated terraform commands are quicker to run.
+
+**Linux / macOS (bash / zsh)** — add to your `~/.bashrc` (or `~/.zshrc`):
+
+```bash
+cat >> ~/.bashrc << 'EOF'
+alias tf='terraform'
+alias tfi='terraform init'
+alias tfv='terraform validate'
+alias tfp='terraform plan'
+alias tfimp='terraform import'          # adopt a live object into state (Exercises 2 & 4)
+alias tfap='terraform apply --auto-approve'
+alias tfapp='terraform apply --auto-approve -parallelism=1'
+alias tfdap='terraform destroy --auto-approve'
+alias tfdapp='terraform destroy --auto-approve -parallelism=1'
+alias tfclear='rm -rf .terraform* && rm terraform.tfstate*'
+alias tffmt='tf fmt -recursive'
+EOF
+
+source ~/.bashrc
+```
+
+**Windows (PowerShell)** — PowerShell aliases can't carry arguments, so use
+**functions** in your profile (`$PROFILE`). Run this once in PowerShell:
+
+```powershell
+# Create your profile if it doesn't exist yet, then append the functions:
+New-Item -ItemType File -Path $PROFILE -Force | Out-Null
+Add-Content -Path $PROFILE -Value @'
+function tf      { terraform @args }
+function tfi     { terraform init @args }
+function tfv     { terraform validate @args }
+function tfp     { terraform plan @args }
+function tfimp   { terraform import @args }                               # Exercises 2 & 4
+function tfap    { terraform apply --auto-approve @args }
+function tfapp   { terraform apply --auto-approve -parallelism=1 @args }
+function tfdap   { terraform destroy --auto-approve @args }
+function tfdapp  { terraform destroy --auto-approve -parallelism=1 @args }
+function tfclear { Remove-Item -Recurse -Force .terraform* -ErrorAction SilentlyContinue; Remove-Item -Force terraform.tfstate* -ErrorAction SilentlyContinue }
+function tffmt   { terraform fmt -recursive @args }
+'@
+
+. $PROFILE   # reload your profile so the functions are available now
+```
+
+> Windows cmd.exe users can instead define `doskey` macros (e.g.
+> `doskey tf=terraform $*`), but PowerShell is recommended.
+
 ---
 
 ## Global troubleshooting
 
-- **`init` won't resolve the provider / wrong version installed** → you likely have a
-  local `dev_overrides` or `filesystem_mirror` in `~/.terraformrc`. Re-run under the
-  clean `TF_CLI_CONFIG_FILE` shown in Prerequisites (`provider_installation { direct {} }`).
 - **Lock-file mismatch after a version bump** → delete `.terraform.lock.hcl` and
   re-run `terraform init` (or `terraform providers lock -platform=...` for a
   multi-platform lock).

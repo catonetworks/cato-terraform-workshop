@@ -1,7 +1,4 @@
-# Optional extra — Modules & CSV
-
-> Not one of the four core exercises — a companion to **Exercise 1**. Do it any time
-> after Exercise 1.
+# Exercises 2 — Create resources, with external data source (csv)
 
 **Goal:** take the `for_each` from Exercise 1, move it into a **reusable module**, and
 drive it from a **CSV file** instead of inline HCL. This is the pattern that scales:
