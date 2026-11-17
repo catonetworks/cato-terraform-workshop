@@ -88,7 +88,6 @@ by hand in Exercise 2.
 ```bash
 # 1. Export the LIVE policy you want to adopt, into config_data/:
 catocli export if_rules --json-filename all_ifw_rules_and_sections.json
-mv all_ifw_rules_and_sections.json config_data/
 
 # 2. Activate the import blocks (they ship parked):
 mv migration.tf.parked migration.tf        # if not already a live migration.tf
