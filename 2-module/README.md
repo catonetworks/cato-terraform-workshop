@@ -90,18 +90,6 @@ an object `{ name, ip, mac_address }` matching the module's `hosts` input.
 > Blank `mac_address` cells are fine — the module converts `""` to "no DHCP
 > reservation".
 
-### Reference the site by name instead of id
-The module also accepts `site_name` instead of `site_id` (set exactly one). That's
-useful when the site already exists or when ids differ between tenants:
-
-```hcl
-module "static_hosts" {
-  source    = "./modules/static_hosts"
-  site_name = "demo-branch-site"
-  hosts     = csvdecode(file("${path.module}/data/hosts.csv"))
-}
-```
-
 ---
 
 ## Clean up
