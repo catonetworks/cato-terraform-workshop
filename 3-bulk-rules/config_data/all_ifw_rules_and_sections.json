@@ -1,0 +1,847 @@
+{
+    "data": {
+        "policy": {
+            "internetFirewall": {
+                "policy": {
+                    "enabled": true,
+                    "rules": [
+                        {
+                            "audit": {
+                                "updatedTime": "2026-11-13T01:55:03.074",
+                                "updatedBy": "sp-11361-apikey-service@internal.system"
+                            },
+                            "rule": {
+                                "id": "96c728b6-19a5-49a2-b90f-4c40b30010a2",
+                                "name": "Section 1 Rule 1",
+                                "description": "",
+                                "section": {
+                                    "name": "Section 2"
+                                },
+                                "enabled": true,
+                                "activePeriod": {
+                                    "effectiveFrom": null,
+                                    "expiresAt": null,
+                                    "useEffectiveFrom": false,
+                                    "useExpiresAt": false
+                                },
+                                "source": {
+                                    "ip": [],
+                                    "host": [],
+                                    "site": [],
+                                    "subnet": [],
+                                    "ipRange": [],
+                                    "globalIpRange": [],
+                                    "networkInterface": [],
+                                    "siteNetworkSubnet": [],
+                                    "floatingSubnet": [],
+                                    "user": [],
+                                    "usersGroup": [],
+                                    "group": [],
+                                    "systemGroup": []
+                                },
+                                "connectionOrigin": "ANY",
+                                "country": [],
+                                "device": [],
+                                "deviceOS": [],
+                                "deviceAttributes": {
+                                    "category": [],
+                                    "type": [],
+                                    "model": [],
+                                    "manufacturer": [],
+                                    "os": [],
+                                    "osVersion": []
+                                },
+                                "destination": {
+                                    "application": [],
+                                    "customApp": [],
+                                    "appCategory": [],
+                                    "customCategory": [],
+                                    "sanctionedAppsCategory": [],
+                                    "country": [],
+                                    "domain": [],
+                                    "fqdn": [],
+                                    "ip": [],
+                                    "subnet": [],
+                                    "ipRange": [],
+                                    "globalIpRange": [],
+                                    "remoteAsn": [],
+                                    "containers": {
+                                        "fqdnContainer": [],
+                                        "ipAddressRangeContainer": []
+                                    }
+                                },
+                                "service": {
+                                    "standard": [],
+                                    "custom": []
+                                },
+                                "action": "BLOCK",
+                                "tracking": {
+                                    "event": {
+                                        "enabled": false
+                                    },
+                                    "alert": {
+                                        "enabled": false,
+                                        "frequency": "HOURLY",
+                                        "subscriptionGroup": [],
+                                        "webhook": [],
+                                        "mailingList": []
+                                    }
+                                },
+                                "schedule": {
+                                    "activeOn": "ALWAYS",
+                                    "customTimeframePolicySchedule": null,
+                                    "customRecurringPolicySchedule": null
+                                },
+                                "exceptions": []
+                            },
+                            "properties": []
+                        },
+                        {
+                            "audit": {
+                                "updatedTime": "2026-11-13T01:55:01.455",
+                                "updatedBy": "sp-11361-apikey-service@internal.system"
+                            },
+                            "rule": {
+                                "id": "289ba5c7-7291-40c1-97cb-2881201b19c0",
+                                "name": "Section 1 Rule 2",
+                                "description": "",
+                                "section": {
+                                    "name": "Section 2"
+                                },
+                                "enabled": true,
+                                "activePeriod": {
+                                    "effectiveFrom": null,
+                                    "expiresAt": null,
+                                    "useEffectiveFrom": false,
+                                    "useExpiresAt": false
+                                },
+                                "source": {
+                                    "ip": [],
+                                    "host": [],
+                                    "site": [],
+                                    "subnet": [],
+                                    "ipRange": [],
+                                    "globalIpRange": [],
+                                    "networkInterface": [],
+                                    "siteNetworkSubnet": [],
+                                    "floatingSubnet": [],
+                                    "user": [],
+                                    "usersGroup": [],
+                                    "group": [],
+                                    "systemGroup": []
+                                },
+                                "connectionOrigin": "ANY",
+                                "country": [],
+                                "device": [],
+                                "deviceOS": [],
+                                "deviceAttributes": {
+                                    "category": [],
+                                    "type": [],
+                                    "model": [],
+                                    "manufacturer": [],
+                                    "os": [],
+                                    "osVersion": []
+                                },
+                                "destination": {
+                                    "application": [],
+                                    "customApp": [],
+                                    "appCategory": [],
+                                    "customCategory": [],
+                                    "sanctionedAppsCategory": [],
+                                    "country": [],
+                                    "domain": [],
+                                    "fqdn": [],
+                                    "ip": [],
+                                    "subnet": [],
+                                    "ipRange": [],
+                                    "globalIpRange": [],
+                                    "remoteAsn": [],
+                                    "containers": {
+                                        "fqdnContainer": [],
+                                        "ipAddressRangeContainer": []
+                                    }
+                                },
+                                "service": {
+                                    "standard": [],
+                                    "custom": []
+                                },
+                                "action": "BLOCK",
+                                "tracking": {
+                                    "event": {
+                                        "enabled": false
+                                    },
+                                    "alert": {
+                                        "enabled": false,
+                                        "frequency": "HOURLY",
+                                        "subscriptionGroup": [],
+                                        "webhook": [],
+                                        "mailingList": []
+                                    }
+                                },
+                                "schedule": {
+                                    "activeOn": "ALWAYS",
+                                    "customTimeframePolicySchedule": null,
+                                    "customRecurringPolicySchedule": null
+                                },
+                                "exceptions": []
+                            },
+                            "properties": []
+                        },
+                        {
+                            "audit": {
+                                "updatedTime": "2026-11-13T01:54:58.509",
+                                "updatedBy": "sp-11361-apikey-service@internal.system"
+                            },
+                            "rule": {
+                                "id": "60afc8ca-5313-4cbf-a59d-8c98fb076612",
+                                "name": "Allow Web Traffic",
+                                "description": "Permit outbound web browsing to example destinations.",
+                                "section": {
+                                    "name": "Allow Rules"
+                                },
+                                "enabled": true,
+                                "activePeriod": {
+                                    "effectiveFrom": null,
+                                    "expiresAt": null,
+                                    "useEffectiveFrom": false,
+                                    "useExpiresAt": false
+                                },
+                                "source": {
+                                    "ip": [],
+                                    "host": [],
+                                    "site": [],
+                                    "subnet": [],
+                                    "ipRange": [],
+                                    "globalIpRange": [],
+                                    "networkInterface": [],
+                                    "siteNetworkSubnet": [],
+                                    "floatingSubnet": [],
+                                    "user": [],
+                                    "usersGroup": [],
+                                    "group": [],
+                                    "systemGroup": []
+                                },
+                                "connectionOrigin": "ANY",
+                                "country": [],
+                                "device": [],
+                                "deviceOS": [],
+                                "deviceAttributes": {
+                                    "category": [],
+                                    "type": [],
+                                    "model": [],
+                                    "manufacturer": [],
+                                    "os": [],
+                                    "osVersion": []
+                                },
+                                "destination": {
+                                    "application": [],
+                                    "customApp": [],
+                                    "appCategory": [],
+                                    "customCategory": [],
+                                    "sanctionedAppsCategory": [],
+                                    "country": [],
+                                    "domain": [
+                                        "example.com",
+                                        "example.org"
+                                    ],
+                                    "fqdn": [],
+                                    "ip": [],
+                                    "subnet": [],
+                                    "ipRange": [],
+                                    "globalIpRange": [],
+                                    "remoteAsn": [],
+                                    "containers": {
+                                        "fqdnContainer": [],
+                                        "ipAddressRangeContainer": []
+                                    }
+                                },
+                                "service": {
+                                    "standard": [],
+                                    "custom": []
+                                },
+                                "action": "ALLOW",
+                                "tracking": {
+                                    "event": {
+                                        "enabled": true
+                                    },
+                                    "alert": {
+                                        "enabled": false,
+                                        "frequency": "HOURLY",
+                                        "subscriptionGroup": [],
+                                        "webhook": [],
+                                        "mailingList": []
+                                    }
+                                },
+                                "schedule": {
+                                    "activeOn": "ALWAYS",
+                                    "customTimeframePolicySchedule": null,
+                                    "customRecurringPolicySchedule": null
+                                },
+                                "exceptions": []
+                            },
+                            "properties": []
+                        },
+                        {
+                            "audit": {
+                                "updatedTime": "2026-11-13T01:54:59.965",
+                                "updatedBy": "sp-11361-apikey-service@internal.system"
+                            },
+                            "rule": {
+                                "id": "b7c96341-7cd3-4444-ae31-b5516a115497",
+                                "name": "Block Social Media",
+                                "description": "Deny access to common social media sites and log the hit.",
+                                "section": {
+                                    "name": "Block Rules"
+                                },
+                                "enabled": true,
+                                "activePeriod": {
+                                    "effectiveFrom": null,
+                                    "expiresAt": null,
+                                    "useEffectiveFrom": false,
+                                    "useExpiresAt": false
+                                },
+                                "source": {
+                                    "ip": [],
+                                    "host": [],
+                                    "site": [],
+                                    "subnet": [],
+                                    "ipRange": [],
+                                    "globalIpRange": [],
+                                    "networkInterface": [],
+                                    "siteNetworkSubnet": [],
+                                    "floatingSubnet": [],
+                                    "user": [],
+                                    "usersGroup": [],
+                                    "group": [],
+                                    "systemGroup": []
+                                },
+                                "connectionOrigin": "ANY",
+                                "country": [],
+                                "device": [],
+                                "deviceOS": [],
+                                "deviceAttributes": {
+                                    "category": [],
+                                    "type": [],
+                                    "model": [],
+                                    "manufacturer": [],
+                                    "os": [],
+                                    "osVersion": []
+                                },
+                                "destination": {
+                                    "application": [],
+                                    "customApp": [],
+                                    "appCategory": [],
+                                    "customCategory": [],
+                                    "sanctionedAppsCategory": [],
+                                    "country": [],
+                                    "domain": [
+                                        "facebook.com",
+                                        "twitter.com",
+                                        "instagram.com"
+                                    ],
+                                    "fqdn": [],
+                                    "ip": [],
+                                    "subnet": [],
+                                    "ipRange": [],
+                                    "globalIpRange": [],
+                                    "remoteAsn": [],
+                                    "containers": {
+                                        "fqdnContainer": [],
+                                        "ipAddressRangeContainer": []
+                                    }
+                                },
+                                "service": {
+                                    "standard": [],
+                                    "custom": []
+                                },
+                                "action": "BLOCK",
+                                "tracking": {
+                                    "event": {
+                                        "enabled": true
+                                    },
+                                    "alert": {
+                                        "enabled": false,
+                                        "frequency": "HOURLY",
+                                        "subscriptionGroup": [],
+                                        "webhook": [],
+                                        "mailingList": []
+                                    }
+                                },
+                                "schedule": {
+                                    "activeOn": "ALWAYS",
+                                    "customTimeframePolicySchedule": null,
+                                    "customRecurringPolicySchedule": null
+                                },
+                                "exceptions": []
+                            },
+                            "properties": []
+                        }
+                    ],
+                    "sections": [
+                        {
+                            "section_index": 1,
+                            "section_name": "Section 1",
+                            "section_id": "fdbbcf32-fcf5-47dc-b203-4c21826dd4a3"
+                        },
+                        {
+                            "section_index": 2,
+                            "section_name": "Section 2",
+                            "section_id": "e7014568-7860-4036-85a2-315532103785"
+                        },
+                        {
+                            "section_index": 3,
+                            "section_name": "Allow Rules",
+                            "section_id": "813768d6-4c68-4e73-a6e2-6ca7edeffc2a"
+                        },
+                        {
+                            "section_index": 4,
+                            "section_name": "Block Rules",
+                            "section_id": "19186d0d-79ac-4a6e-b539-391f18dde5bb"
+                        }
+                    ],
+                    "audit": {
+                        "publishedTime": "2026-11-13T01:55:17.608",
+                        "publishedBy": "sp-11361-apikey-service@internal.system"
+                    },
+                    "revision": null,
+                    "rules_in_sections": [
+                        {
+                            "index_in_section": 1,
+                            "section_name": "Section 1",
+                            "entry_type": "sub_policy",
+                            "sub_policy_name": "Section 1 Sub Policy 1"
+                        },
+                        {
+                            "index_in_section": 2,
+                            "section_name": "Section 1",
+                            "entry_type": "sub_policy",
+                            "sub_policy_name": "Section 1 Sub Policy 2"
+                        },
+                        {
+                            "index_in_section": 1,
+                            "section_name": "Section 2",
+                            "rule_name": "Section 1 Rule 1"
+                        },
+                        {
+                            "index_in_section": 2,
+                            "section_name": "Section 2",
+                            "rule_name": "Section 1 Rule 2"
+                        },
+                        {
+                            "index_in_section": 3,
+                            "section_name": "Section 2",
+                            "entry_type": "sub_policy",
+                            "sub_policy_name": "Section 2 Sub Policy 1"
+                        },
+                        {
+                            "index_in_section": 1,
+                            "section_name": "Allow Rules",
+                            "rule_name": "Allow Web Traffic"
+                        },
+                        {
+                            "index_in_section": 1,
+                            "section_name": "Block Rules",
+                            "rule_name": "Block Social Media"
+                        }
+                    ],
+                    "sub_policies": [
+                        {
+                            "sub_policy_name": "Section 1 Sub Policy 1",
+                            "sub_policy_id": "fd90e383-dfc2-46ab-a306-1abd765e90b1",
+                            "scope_rule_id": "c2072107-da4f-4051-892b-349cd21d1864",
+                            "description": "",
+                            "enabled": false,
+                            "scope_enabled": true,
+                            "scope": {
+                                "source": {
+                                    "ip": [
+                                        "1.2.3.4"
+                                    ],
+                                    "host": [],
+                                    "site": [],
+                                    "subnet": [],
+                                    "ipRange": [],
+                                    "globalIpRange": [],
+                                    "networkInterface": [],
+                                    "siteNetworkSubnet": [],
+                                    "floatingSubnet": [],
+                                    "user": [],
+                                    "usersGroup": [],
+                                    "group": [],
+                                    "systemGroup": []
+                                },
+                                "connectionOrigin": "ANY",
+                                "country": [],
+                                "device": [],
+                                "deviceOS": [],
+                                "deviceAttributes": {
+                                    "category": [],
+                                    "type": [],
+                                    "model": [],
+                                    "manufacturer": [],
+                                    "os": [],
+                                    "osVersion": []
+                                }
+                            },
+                            "cleanup_rule": {
+                                "audit": {
+                                    "updatedTime": "2026-11-13T01:55:06.508",
+                                    "updatedBy": "sp-11361-apikey-service@internal.system"
+                                },
+                                "rule": {
+                                    "id": "09d72281-3a59-433e-b4b4-32ba9229c3ab",
+                                    "name": "Section 1 Sub Policy 1 - Cleanup Rule",
+                                    "description": "Cato default sub policy cleanup rule",
+                                    "section": {
+                                        "name": ""
+                                    },
+                                    "enabled": true,
+                                    "activePeriod": {
+                                        "effectiveFrom": null,
+                                        "expiresAt": null,
+                                        "useEffectiveFrom": false,
+                                        "useExpiresAt": false
+                                    },
+                                    "source": {
+                                        "ip": [],
+                                        "host": [],
+                                        "site": [],
+                                        "subnet": [],
+                                        "ipRange": [],
+                                        "globalIpRange": [],
+                                        "networkInterface": [],
+                                        "siteNetworkSubnet": [],
+                                        "floatingSubnet": [],
+                                        "user": [],
+                                        "usersGroup": [],
+                                        "group": [],
+                                        "systemGroup": []
+                                    },
+                                    "connectionOrigin": "ANY",
+                                    "country": [],
+                                    "device": [],
+                                    "deviceOS": [],
+                                    "deviceAttributes": {
+                                        "category": [],
+                                        "type": [],
+                                        "model": [],
+                                        "manufacturer": [],
+                                        "os": [],
+                                        "osVersion": []
+                                    },
+                                    "destination": {
+                                        "application": [],
+                                        "customApp": [],
+                                        "appCategory": [],
+                                        "customCategory": [],
+                                        "sanctionedAppsCategory": [],
+                                        "country": [],
+                                        "domain": [],
+                                        "fqdn": [],
+                                        "ip": [],
+                                        "subnet": [],
+                                        "ipRange": [],
+                                        "globalIpRange": [],
+                                        "remoteAsn": [],
+                                        "containers": {
+                                            "fqdnContainer": [],
+                                            "ipAddressRangeContainer": []
+                                        }
+                                    },
+                                    "service": {
+                                        "standard": [],
+                                        "custom": []
+                                    },
+                                    "action": "ALLOW",
+                                    "tracking": {
+                                        "event": {
+                                            "enabled": false
+                                        },
+                                        "alert": {
+                                            "enabled": false,
+                                            "frequency": "HOURLY",
+                                            "subscriptionGroup": [],
+                                            "webhook": [],
+                                            "mailingList": []
+                                        }
+                                    },
+                                    "schedule": {
+                                        "activeOn": "ALWAYS",
+                                        "customTimeframePolicySchedule": null,
+                                        "customRecurringPolicySchedule": null
+                                    },
+                                    "exceptions": []
+                                },
+                                "properties": []
+                            }
+                        },
+                        {
+                            "sub_policy_name": "Section 1 Sub Policy 2",
+                            "sub_policy_id": "81753ac9-6b3a-4166-8008-b6a0fa999ee7",
+                            "scope_rule_id": "8961844f-b0b0-47e4-8d87-e98b7da292c5",
+                            "description": "",
+                            "enabled": false,
+                            "scope_enabled": true,
+                            "scope": {
+                                "source": {
+                                    "ip": [],
+                                    "host": [],
+                                    "site": [],
+                                    "subnet": [],
+                                    "ipRange": [],
+                                    "globalIpRange": [],
+                                    "networkInterface": [],
+                                    "siteNetworkSubnet": [],
+                                    "floatingSubnet": [],
+                                    "user": [],
+                                    "usersGroup": [],
+                                    "group": [
+                                        {
+                                            "name": "my group name"
+                                        }
+                                    ],
+                                    "systemGroup": []
+                                },
+                                "connectionOrigin": "ANY",
+                                "country": [],
+                                "device": [],
+                                "deviceOS": [],
+                                "deviceAttributes": {
+                                    "category": [],
+                                    "type": [],
+                                    "model": [],
+                                    "manufacturer": [],
+                                    "os": [],
+                                    "osVersion": []
+                                }
+                            },
+                            "cleanup_rule": {
+                                "audit": {
+                                    "updatedTime": "2026-11-13T01:55:13.992",
+                                    "updatedBy": "sp-11361-apikey-service@internal.system"
+                                },
+                                "rule": {
+                                    "id": "3a284b72-2385-4cd9-81e7-3ecb59dfffef",
+                                    "name": "Section 1 Sub Policy 2 - Cleanup Rule",
+                                    "description": "Cato default sub policy cleanup rule",
+                                    "section": {
+                                        "name": ""
+                                    },
+                                    "enabled": true,
+                                    "activePeriod": {
+                                        "effectiveFrom": null,
+                                        "expiresAt": null,
+                                        "useEffectiveFrom": false,
+                                        "useExpiresAt": false
+                                    },
+                                    "source": {
+                                        "ip": [],
+                                        "host": [],
+                                        "site": [],
+                                        "subnet": [],
+                                        "ipRange": [],
+                                        "globalIpRange": [],
+                                        "networkInterface": [],
+                                        "siteNetworkSubnet": [],
+                                        "floatingSubnet": [],
+                                        "user": [],
+                                        "usersGroup": [],
+                                        "group": [],
+                                        "systemGroup": []
+                                    },
+                                    "connectionOrigin": "ANY",
+                                    "country": [],
+                                    "device": [],
+                                    "deviceOS": [],
+                                    "deviceAttributes": {
+                                        "category": [],
+                                        "type": [],
+                                        "model": [],
+                                        "manufacturer": [],
+                                        "os": [],
+                                        "osVersion": []
+                                    },
+                                    "destination": {
+                                        "application": [],
+                                        "customApp": [],
+                                        "appCategory": [],
+                                        "customCategory": [],
+                                        "sanctionedAppsCategory": [],
+                                        "country": [],
+                                        "domain": [],
+                                        "fqdn": [],
+                                        "ip": [],
+                                        "subnet": [],
+                                        "ipRange": [],
+                                        "globalIpRange": [],
+                                        "remoteAsn": [],
+                                        "containers": {
+                                            "fqdnContainer": [],
+                                            "ipAddressRangeContainer": []
+                                        }
+                                    },
+                                    "service": {
+                                        "standard": [],
+                                        "custom": []
+                                    },
+                                    "action": "ALLOW",
+                                    "tracking": {
+                                        "event": {
+                                            "enabled": false
+                                        },
+                                        "alert": {
+                                            "enabled": false,
+                                            "frequency": "HOURLY",
+                                            "subscriptionGroup": [],
+                                            "webhook": [],
+                                            "mailingList": []
+                                        }
+                                    },
+                                    "schedule": {
+                                        "activeOn": "ALWAYS",
+                                        "customTimeframePolicySchedule": null,
+                                        "customRecurringPolicySchedule": null
+                                    },
+                                    "exceptions": []
+                                },
+                                "properties": []
+                            }
+                        },
+                        {
+                            "sub_policy_name": "Section 2 Sub Policy 1",
+                            "sub_policy_id": "3537a759-a8c6-450d-b78a-b2c271d83aaa",
+                            "scope_rule_id": "0dede897-c44e-4dd5-a885-2078dfeb0034",
+                            "description": "",
+                            "enabled": false,
+                            "scope_enabled": true,
+                            "scope": {
+                                "source": {
+                                    "ip": [],
+                                    "host": [],
+                                    "site": [],
+                                    "subnet": [],
+                                    "ipRange": [],
+                                    "globalIpRange": [],
+                                    "networkInterface": [],
+                                    "siteNetworkSubnet": [],
+                                    "floatingSubnet": [],
+                                    "user": [],
+                                    "usersGroup": [],
+                                    "group": [
+                                        {
+                                            "name": "my group name"
+                                        }
+                                    ],
+                                    "systemGroup": []
+                                },
+                                "connectionOrigin": "ANY",
+                                "country": [],
+                                "device": [],
+                                "deviceOS": [],
+                                "deviceAttributes": {
+                                    "category": [],
+                                    "type": [],
+                                    "model": [],
+                                    "manufacturer": [],
+                                    "os": [],
+                                    "osVersion": []
+                                }
+                            },
+                            "cleanup_rule": {
+                                "audit": {
+                                    "updatedTime": "2026-11-13T01:55:10.050",
+                                    "updatedBy": "sp-11361-apikey-service@internal.system"
+                                },
+                                "rule": {
+                                    "id": "20fd3e04-da55-43e9-bdac-c610a1950ed8",
+                                    "name": "Section 2 Sub Policy 1 - Cleanup Rule",
+                                    "description": "Cato default sub policy cleanup rule",
+                                    "section": {
+                                        "name": ""
+                                    },
+                                    "enabled": true,
+                                    "activePeriod": {
+                                        "effectiveFrom": null,
+                                        "expiresAt": null,
+                                        "useEffectiveFrom": false,
+                                        "useExpiresAt": false
+                                    },
+                                    "source": {
+                                        "ip": [],
+                                        "host": [],
+                                        "site": [],
+                                        "subnet": [],
+                                        "ipRange": [],
+                                        "globalIpRange": [],
+                                        "networkInterface": [],
+                                        "siteNetworkSubnet": [],
+                                        "floatingSubnet": [],
+                                        "user": [],
+                                        "usersGroup": [],
+                                        "group": [],
+                                        "systemGroup": []
+                                    },
+                                    "connectionOrigin": "ANY",
+                                    "country": [],
+                                    "device": [],
+                                    "deviceOS": [],
+                                    "deviceAttributes": {
+                                        "category": [],
+                                        "type": [],
+                                        "model": [],
+                                        "manufacturer": [],
+                                        "os": [],
+                                        "osVersion": []
+                                    },
+                                    "destination": {
+                                        "application": [],
+                                        "customApp": [],
+                                        "appCategory": [],
+                                        "customCategory": [],
+                                        "sanctionedAppsCategory": [],
+                                        "country": [],
+                                        "domain": [],
+                                        "fqdn": [],
+                                        "ip": [],
+                                        "subnet": [],
+                                        "ipRange": [],
+                                        "globalIpRange": [],
+                                        "remoteAsn": [],
+                                        "containers": {
+                                            "fqdnContainer": [],
+                                            "ipAddressRangeContainer": []
+                                        }
+                                    },
+                                    "service": {
+                                        "standard": [],
+                                        "custom": []
+                                    },
+                                    "action": "ALLOW",
+                                    "tracking": {
+                                        "event": {
+                                            "enabled": false
+                                        },
+                                        "alert": {
+                                            "enabled": false,
+                                            "frequency": "HOURLY",
+                                            "subscriptionGroup": [],
+                                            "webhook": [],
+                                            "mailingList": []
+                                        }
+                                    },
+                                    "schedule": {
+                                        "activeOn": "ALWAYS",
+                                        "customTimeframePolicySchedule": null,
+                                        "customRecurringPolicySchedule": null
+                                    },
+                                    "exceptions": []
+                                },
+                                "properties": []
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

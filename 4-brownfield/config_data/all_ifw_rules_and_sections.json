@@ -1,0 +1,20 @@
+{
+    "data": {
+        "policy": {
+            "internetFirewall": {
+                "policy": {
+                    "enabled": true,
+                    "rules": [],
+                    "sections": [],
+                    "audit": {
+                        "publishedTime": "2026-11-16T19:27:30.520",
+                        "publishedBy": "sp-11361-apikey-service@internal.system"
+                    },
+                    "revision": null,
+                    "rules_in_sections": [],
+                    "sub_policies": []
+                }
+            }
+        }
+    }
+}

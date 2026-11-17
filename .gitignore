@@ -56,8 +56,5 @@ terraform.rc
 # Logs (deploy/destroy detached run logs)
 *.log
 
-# Script-output dumps (WF rule/section exports — not source)
-**/config_data/*
-
 # OS / editor cruft
 .DS_Store
