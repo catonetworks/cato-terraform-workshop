@@ -145,7 +145,8 @@ Still — always eyeball your JSON before applying.
 ## Clean up
 
 ```bash
-terraform destroy
+# requires parallelism sequential processing for static_host delete operation
+terraform destroy parallelism=1 
 ```
 
 ---

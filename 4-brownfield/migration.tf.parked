@@ -1,23 +1,5 @@
 # # One-shot brownfield RE-adoption of the live Internet Firewall policy.
 
-# locals {
-#   ifw_migration = jsondecode(file("config_data/all_ifw_rules_and_sections.json")).data.policy.internetFirewall.policy
-# }
-
-# import {
-#   for_each = { for s in local.ifw_migration.sections : s.section_name => s }
-
-#   to = module.if_rules.cato_if_section.sections[each.key]
-#   id = each.value.section_id
-# }
-
-# import {
-#   for_each = { for r in local.ifw_migration.rules : r.rule.name => r.rule }
-
-#   to = module.if_rules.cato_if_rule.rules[each.key]
-#   id = each.value.id
-# }
-
 locals {
   ifw_policy = jsondecode(file("./config_data/all_ifw_rules_and_sections.json")).data.policy.internetFirewall.policy
 
