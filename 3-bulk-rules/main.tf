@@ -19,7 +19,7 @@ provider "cato" {
 
 module "if_rules" {
   source  = "catonetworks/bulk-if-rules/cato"
-  version = "~= 0.0.9"
+  version = "<= 0.0.9"
 
   # Path to the policy exported with:
   #   catocli export if_rules --json-filename all_ifw_rules_and_sections.json
