@@ -1,4 +1,4 @@
-# Exercises 1 & 2 — Create resources, then import one
+# Exercises 1 — Create resources, then import one
 
 This folder holds the first two exercises. They share one `main.tf`:
 
