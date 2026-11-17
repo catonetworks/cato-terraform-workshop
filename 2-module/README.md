@@ -95,8 +95,7 @@ an object `{ name, ip, mac_address }` matching the module's `hosts` input.
 ## Clean up
 
 ```bash
-terraform destroy
-```
+terraform destroy --parallelism=1
 
 ---
 
