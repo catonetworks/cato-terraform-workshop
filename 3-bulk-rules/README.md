@@ -123,14 +123,6 @@ terraform output deployment_summary
 **Expected result:** the full sample policy (rules + sections) is created in the dev
 tenant in one apply; `terraform output deployment_summary` prints the counts.
 
-### Use a real export instead of the sample
-```bash
-# from a dev tenant you have a profile for:
-catocli export if_rules --json-filename all_ifw_rules_and_sections.json
-mv all_ifw_rules_and_sections.json config_data/
-terraform plan          # now shows your real policy
-```
-
 ---
 
 ## Safety: empty-policy guard
@@ -139,15 +131,6 @@ terraform plan          # now shows your real policy
 `allow_empty_policy` flag is wired here. The guard is a safety net: a truncated or
 wrong-tenant export that reads as zero rules will not silently delete a live policy.
 Still — always eyeball your JSON before applying.
-
----
-
-## Clean up
-
-```bash
-# requires parallelism sequential processing for static_host delete operation
-terraform destroy parallelism=1 
-```
 
 ---
 
