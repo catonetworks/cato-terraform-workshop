@@ -46,22 +46,13 @@ and a **module** (a reusable folder of `.tf` with inputs/outputs).
 **2. The Cato provider** — every folder pins `catonetworks/cato` **`= 2.0.0-prerelease.1`**
 (exact `=` pin, because Terraform excludes pre-releases from range operators). It
 installs from the **public Terraform Registry** — `terraform init` pulls it, **no
-filesystem mirror needed**. If your `~/.terraformrc` has `dev_overrides` or a
-`filesystem_mirror` for a local provider build, run the workshop under a clean config
-so the registry version is used:
-```bash
-# registry-only.tfrc
-provider_installation { direct {} }
-```
-```bash
-export TF_CLI_CONFIG_FILE=/path/to/registry-only.tfrc
-```
+filesystem mirror needed**. 
 
 **3. catocli** (Exercises 3 & 4 only) — the Cato CLI, configured with a dev profile,
 used to export live policy JSON. Install **version 3.3.0**:
 
 ```bash
-pip install catocli==3.3.0
+pip install catocli
 ```
 
 **4. Authentication — choose one.** Each folder's `provider "cato"` block is **inline in
